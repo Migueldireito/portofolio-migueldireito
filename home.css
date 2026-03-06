@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0b1220;
+    padding: 0 8%;
+    position: relative;
+    flex-wrap: wrap;
+}
+.highliht{
+    color: #38bdf8;
+}
+.hero-container{
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.hero-left h1{
+    font-size: 3.2rem;
+    color: #f1f5f9;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+
+}
+.hero-left p{
+    font-size: 1rem;
+    color: #94a3b8;
+    max-width: 500px;
+    line-height: 1.6;
+}
+.social-icons{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+.social-icons a{
+    font-size: 1.4rem;
+    color: #94a3b8;
+    transition: 0.3s ease;
+    
+}
+.social-icons a:hover{
+    color:#38bdf8;
+    transform:translateY(-3px)
+}
+.hero-btn{
+    margin-left: -20px;
+    position: relative;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #0b1220;
+    background-color: #38bdf8;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s ease cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.4s ease,
+    color 0.3s ease;
+
+
+}
+.hero-btn::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    background: linear-gradient(135deg,rgba(56,189,248,0.9),rgba(34,211,238,));
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    z-index: -1;
+}
+.hero-btn:hover{
+    transform: scale(1.07);
+    box-shadow: 
+    0 0 25px rgba(56,189,248,0.6),
+    0 10px 30px rgba(56,189,248,0.4);
+
+}
+.hero-btn:hover::before{
+    transform: scale(1);
+}
+.hero-btn:active{
+    transform: translateY(0);
+}
+.hero-right{
+  
+    text-align: right;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border: 5px solid #38bdf8;
+    border-radius: 10%;
+   
+}
+.hero-right img{
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-stats{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+   
+
+}
+.hero-stats div{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.hero-stats h3{
+    color: #38bdf8;
+    font-size: 1.8rem;
+}
+.hero-stats p{
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+.divider{
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.2);
+}
+/*Responsavidade */
+@media (max-width: 768px){
+    .hero{
+        min-height: auto;
+        padding: 120px 5% 80px;
+    }
+    .hero-stats{
+        position: static;
+        transform: none;
+        margin-top: 40px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .divider{
+        display: none;
+    }
+    .hero-left {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-btn{
+        margin-left: 0;
+    }
+    .hero-right img{
+        max-width: 100%;
+
+    }
+}
+@media (max-width:600px){
+    .hero{
+        padding-bottom: 2rem;
+    }
+    .hero-left{
+        align-items: flex-start;
+        text-align: left;
+    }
+    .hero-left h1{
+        font-size: 2.2rem;
+    }
+    .hero-left p{
+        font-size: 0.95rem;
+    }
+    .hero-btn{
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    .social-icons{
+       justify-content: flex-start;
+    }
+    .hero-right{
+        margin-top: 10px;
+        text-align: left;
+    }
+    .hero-right img{
+        max-width: 100%;
+    }
+    .hero-stats{
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 30px;
+        margin-top: 20px;
+        position: static;
+        transform: none;
+    }
+    .hero-stats div{
+        text-align: left;
+    }
+}
